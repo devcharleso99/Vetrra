@@ -1,4 +1,4 @@
-# Vetra – Public Repository
+# Vetrra – Public Repository
 
 This repository contains **public documentation, installation guides, system requirements, and issue tracking** for Vetra.
 
