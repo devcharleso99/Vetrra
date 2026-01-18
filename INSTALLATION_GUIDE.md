@@ -6,11 +6,11 @@ Before you install or launch Vetrra, have these ready. Most "it won't save / it 
 
 - **Workspace location**: pick a writable folder with lots of free space (SSD recommended)
 - **Plex library paths**: Movies path + TV path (the folders Plex actually scans)
-- **SABnzbd** (required if enabled):
+- **SABnzbd** (required):
   - Base URL (example: `http://127.0.0.1:8080`)
   - API key
   - Log directory path (example: `%LOCALAPPDATA%\\sabnzbd\\logs`)
-- **Radarr/Sonarr** (only if you enable them in Settings):
+- **Radarr/Sonarr** (required):
   - Base URL + API key for each service you plan to use
 - **Metadata keys**:
   - TMDb API key
@@ -18,7 +18,7 @@ Before you install or launch Vetrra, have these ready. Most "it won't save / it 
   - Fanart.tv API key
 - **Indexer / Preflight**:
   - Indexer name
-  - Indexer base URL + API key (Newznab-style)
+  - Indexer base URL + API key (NZBFinder)
 - **Poster analysis**:
   - Pick a local Ollama vision model in Settings (required to pass "Test Configuration")
 
@@ -84,22 +84,19 @@ Install / launch these first (if you don't already have them):
 
 Notes:
 - These services usually open a local web UI after install.
-- Radarr/Sonarr/SABnzbd are **enabled by default** in Vetrra.
-  - If you **don't use** a service, disable it in Tools > Settings to avoid "required field" errors.
-  - If a service is enabled, Vetrra requires its URL + API key (and for SABnzbd: Log Directory) to save/test configuration.
 - Prowlarr connects directly to Radarr/Sonarr; no Vetrra connection needed.
 
-Radarr
+Radarr (required for Movies)
 - URL: full URL including port.
   - Default example: http://localhost:7878
 - API key: Radarr UI -> Settings -> General -> Security -> API Key
 
-Sonarr
+Sonarr (required for TV Shows)
 - URL: full URL including port.
   - Default example: http://localhost:8989
 - API key: Sonarr UI -> Settings -> General -> Security -> API Key
 
-SABnzbd
+SABnzbd (required)
 - URL: full URL including port.
   - Default example: http://127.0.0.1:8080
 - API key: SABnzbd UI -> Config (gear) -> General -> Security -> API Key
@@ -157,7 +154,7 @@ Step B - Add SABnzbd as the download client (Radarr/Sonarr)
 
 Repeat the same in Sonarr -> Settings -> Download Clients.
 
-Step C - Add indexers (recommended: do this in Prowlarr)
+Step C - Add indexers (required: do this in Prowlarr)
 Prowlarr is the easiest way to manage indexers once and sync them into both Radarr and Sonarr.
 
 1. Install and open Prowlarr
@@ -322,8 +319,6 @@ Troubleshooting (common first-run blockers)
 
 1) "Save Configuration" / "Test Configuration" fails
 - In Tools > Settings, click **Test Configuration** and follow the issue list.
-- If you don't use Radarr or Sonarr, disable them in Settings so they stop being treated as required.
-- SABnzbd is enabled by default; if enabled, you must set **URL + API key + Log Directory**.
 
 2) FileNotFoundError / "servers.json not found"
 Vetrra keeps an optional NNTP probing config here:
