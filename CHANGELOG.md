@@ -19,8 +19,6 @@ Live upscaling progress callbacks in Step 4 telemetry.
 
 ### Changed
 
-Downloads and documentation moved to GitHub.
-
 Installer now includes "OCR Pack" messaging and AppData cleanup options.
 
 Step 5 now validates SRT files by scanning for timecode cues rather than picking the first file.
