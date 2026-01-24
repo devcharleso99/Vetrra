@@ -2,7 +2,7 @@
 
 This guide focuses on day-to-day usage once Vetrra is installed and configured.
 
-If you haven’t installed and configured Vetrra yet, start with:
+If you haven't installed and configured Vetrra yet, start with:
 
 - `INSTALLATION_GUIDE.md`
 - `SYSTEM_REQUIREMENTS.md`
@@ -12,13 +12,20 @@ If you haven’t installed and configured Vetrra yet, start with:
 1. Launch Vetrra.
 2. Tools -> Settings.
 3. Configure the tabs in order:
+   - Quick Start (recommended)
    - Library Paths
    - Automation & Webhooks
-   - Providers (Metadata + OCR + Indexer APIs)
+   - Providers
+   - Indexers & OCR (advanced)
+   - Pipeline Stages (advanced)
    - External Tools (only if auto-detection fails)
 4. Click **Save Configuration**, then **Test Configuration**.
 
-If "Test Configuration" reports missing fields for a service you don’t use, disable that integration in Settings first.
+If "Test Configuration" reports missing fields for a service you don't use, disable that integration in Settings first.
+
+## In-App Help (Context-Aware)
+
+Each Settings tab includes a **Help** button that opens the built-in documentation viewer directly to the relevant section. Use the Help window's search bar to quickly find topics like "API key", "path mappings", and "OCR".
 
 ## What The Pipeline Does (High Level)
 

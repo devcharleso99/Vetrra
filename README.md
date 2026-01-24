@@ -20,9 +20,21 @@ This repository contains Vetrra documentation and release notes. Vetrra itself i
 
 ## Start Here
 
-- Install and configure: `INSTALLATION_GUIDE.md`
+- Golden Path (first-run activation): `QUICK_START.md`
+- Advanced (Docker / NAS / remote clients): `ADVANCED_SETUP.md`
+- Full reference (all settings): `INSTALLATION_GUIDE.md`
+- Troubleshooting (first-run blockers): `TROUBLESHOOTING.md`
 - System requirements: `SYSTEM_REQUIREMENTS.md`
 - Help and bug reports: `SUPPORT.md`
+
+## System Readiness Checklist
+
+- [ ] OS: Windows 10/11 (64-bit)
+- [ ] Hardware: 8GB RAM minimum (16GB recommended), SSD free space for workspace
+- [ ] Access: administrator rights (for dependency installs)
+- [ ] Accounts: Usenet provider + Indexer API key + TMDb API key
+- [ ] Local services installed & running: SABnzbd 4.0+, Radarr 5.0+ (Sonarr 4.0+ optional)
+- [ ] Ollama installed + model pulled: `ollama pull qwen2.5vl`
 
 ## Pipeline Overview
 

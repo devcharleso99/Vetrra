@@ -1,4 +1,9 @@
-# Vetrra Installation and Settings Guide
+# Vetrra Installation and Settings Guide (Reference)
+
+Start here (recommended):
+- Golden Path (first-run activation): `QUICK_START.md`
+- Advanced (Docker / NAS / remote clients): `ADVANCED_SETUP.md`
+- Troubleshooting: `TROUBLESHOOTING.md`
 
 ## Pre-Installation Checklist (Do This First)
 
@@ -24,32 +29,23 @@ Before you install or launch Vetrra, have these ready. Most "it won't save / it 
 
 Note on installer size: depending on the release package, the installer may be large because it can include bundled utilities and offline/local AI components. This is intentional (privacy + stability).
 
-## Quick Start
-1. Install Vetrra and launch the EXE.
-2. On first-ever launch, the Settings window opens automatically.
-  - If you ever need it later: Tools > Settings.
-3. Configure the required tabs in order:
-  - Library Paths
-  - Automation & Webhooks
-  - Providers (Metadata + OCR + Indexer APIs)
-  - External Tools (only if auto-detection fails)
-4. Click Save Configuration, then Test Configuration.
-5. Go to the Pipeline tab, expand Step 1: Intake, and click Run to start the intake process.
+## Quick Start (Golden Path)
+Use `QUICK_START.md` for a rigid, prescriptive first-run path designed to maximize “Step 1: Intake” success.
 
-Required tools (installer will detect these)
+## Required tools (installer will detect these)
 - FFmpeg: https://www.gyan.dev/ffmpeg/builds/
 - MKVToolNix: https://mkvtoolnix.download/downloads.html
 - Subtitle Edit GUI: https://github.com/SubtitleEdit/subtitleedit/releases
 - Ollama (subtitle OCR and poster analysis): https://ollama.com/download/windows
 
-Optional tools (only needed for specific configurations)
+### Optional tools (only needed for specific configurations)
 - Tesseract OCR (legacy fallback for Step 7): https://github.com/UB-Mannheim/tesseract/wiki
 - Docker Desktop + NVIDIA NIM (optional Step 7 accelerator for NVIDIA users): https://www.docker.com/products/docker-desktop/ and https://catalog.ngc.nvidia.com/
 
-Included
+### Included
 - HandBrakeCLI and SE-CLI is bundled with Vetrra. 
 
-Step 7 Poster OCR - how it works (v1.1.0+)
+## Step 7 Poster OCR - how it works (v1.1.0+)
 - Default behavior uses Local AI (RapidOCR/ONNX) for poster text-region detection (no Docker required).
 - Local AI uses DirectML GPU acceleration on Windows when available (Intel Arc / AMD / NVIDIA); otherwise it falls back to CPU automatically.
 - If you have Docker Desktop + an NVIDIA GPU + a NIM API key, Auto mode can use NVIDIA NIM (PaddleOCR container).
@@ -64,16 +60,16 @@ Optional: start the NIM container manually (recommended for first-time setup)
    - Browser: `http://localhost:8000/v1/health/ready`
    - CLI: `docker ps` (look for `paddleocr-nim`) and `docker logs paddleocr-nim`
 
-Settings checklist (Tools > Settings)
+## Settings checklist (Tools > Settings)
 
-Tab: Library Paths
+### Tab: Library Paths
 - Main Workspace Path: set this first. This is the root folder for all pipeline working folders.
   Keep it on a drive with lots of free space.
 - Movies Path: your Plex movies library folder.
 - TV Path: your Plex TV shows library folder.
 - UI Scale: optional display size tweak.
 
-Tab: Automation and Webhooks
+### Tab: Automation and Webhooks
 This tab configures the three local services Vetrra talks to:
 
 Install / launch these first (if you don't already have them):
@@ -213,7 +209,7 @@ Configure Radarr webhook
    - On File Import
 6. Save
 
-Tab: Providers
+### Tab: Providers
 Metadata and artwork API keys
 - TMDb API Key: https://www.themoviedb.org/settings/api
 - TVDB API Key: https://thetvdb.com/api-information
@@ -248,7 +244,7 @@ NNTP Probing (Optional, Preflight)
 - If you want real NNTP availability probing ("anti-probe") in preflight, enable it in Tools > Settings > Providers and configure your Usenet provider (this writes `%APPDATA%\\Vetrra\\config\\servers.json`).
 - If you leave it disabled/unconfigured, preflight falls back to static analysis.
 
-Tab: Pipeline Stages
+### Tab: Pipeline Stages
 
 Most users should keep defaults here. The settings below are the only ones you might reasonably change.
 
@@ -308,7 +304,7 @@ Stage 08: Quality Check & Deploy
   - Higher = faster scanning, but higher CPU usage and a greater chance of hitting rate limits.
   - Default `4` is a good balance for most systems.
 
-Tab: External Tools
+### Tab: External Tools
 - Set paths only if tools are not on your PATH or not in standard locations.
 - Required: ffmpeg.exe, ffprobe.exe, mkvmerge.exe, mkvpropedit.exe, mkvextract.exe, tesseract.exe (fallback OCR), SubtitleEdit.exe (SRT->SUP only).
 

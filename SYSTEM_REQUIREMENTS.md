@@ -2,7 +2,9 @@
 
 This document describes the **hardware + OS requirements** to run Vetrra, plus a short list of **software prerequisites** that affect specific pipeline stages.
 
-For setup instructions, see `INSTALLATION_GUIDE.md`.
+For first-run setup instructions, see `QUICK_START.md`.
+For advanced Docker/NAS setups, see `ADVANCED_SETUP.md`.
+For the full reference, see `INSTALLATION_GUIDE.md`.
 
 ## Supported Platforms
 
