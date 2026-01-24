@@ -17,12 +17,6 @@ Manual mode "loose movie file staging" in Step 2.
 
 Live upscaling progress callbacks in Step 4 telemetry.
 
-**Option 1 — Clean, minimal, UI-native (my top recommendation)**
-
-**Recommended setup:** Run Vetrra, SABnzbd, and Radarr on the same Windows PC for the simplest experience.
-
-*Using Docker, NAS, or remote systems? See [ADVANCED_SETUP.md](ADVANCED_SETUP.md) for path mapping and remote configurations.*
-
 ### Changed
 
 Downloads and documentation moved to GitHub.
